@@ -11,11 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag semoac/infra-ci:$(date +%s) --tag semoac/infra-ci:latest
+      run: docker build . --file Dockerfile --tag semoac/infra-ci:latest
     - name: Docker Login
       uses: Azure/docker-login@v1
       with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Push the Docker image
-      run: docker push semoac/infra-ci:$(date +%s) && docker push semoac/infra-ci:latest
+      run: docker push semoac/infra-ci:latest
