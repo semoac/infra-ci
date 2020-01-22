@@ -30,3 +30,7 @@ RUN mv kustomize /usr/local/bin/kustomize
 ## KUBEVAL
 ADD https://github.com/instrumenta/kubeval/releases/download/0.14.0/kubeval-linux-amd64.tar.gz /tmp/
 RUN tar zxvf /tmp/kubeval-linux-amd64.tar.gz kubeval && mv kubeval /usr/local/bin/kubeval
+
+## AWS-AUTH
+ADD https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.9/2019-06-21/bin/linux/amd64/aws-iam-authenticator /usr/local/bin/aws-iam-authenticator
+RUN chmod +x /usr/local/bin/aws-iam-authenticator
