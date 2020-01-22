@@ -25,3 +25,4 @@ COPY --from=bitnami/kubectl:1.14 /opt/bitnami/kubectl/bin/kubectl /usr/local/bin
 
 ## KUSTOMIZE
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+RUN mv kustomize /usr/local/bin/kustomize
