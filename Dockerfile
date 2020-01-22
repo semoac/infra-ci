@@ -28,4 +28,5 @@ RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/
 RUN mv kustomize /usr/local/bin/kustomize
 
 ## KUBEVAL
-COPY --from=garethr/kubeval /kubeval /usr/local/bin/kubeval
+ADD https://github.com/instrumenta/kubeval/releases/download/0.14.0/kubeval-linux-amd64.tar.gz /tmp/
+RUN tar zxvf /tmp/kubeval-linux-amd64.tar.gz kubeval && mv kubeval /usr/local/bin/kubeval
