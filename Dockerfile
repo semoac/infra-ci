@@ -1,7 +1,7 @@
 FROM debian:buster
 
 # SO Software
-RUN apt update && apt install -y awscli wget unzip git vim curl && apt clean all
+RUN apt update && apt install -y awscli wget unzip git vim curl make && apt clean all
 RUN wget https://github.com/mozilla/sops/releases/download/v3.5.0/sops_3.5.0_amd64.deb \
     && dpkg -i sops_3.5.0_amd64.deb \
     && apt install -f \
@@ -22,4 +22,3 @@ RUN helm plugin install https://github.com/hypnoglow/helm-s3.git
 
 ## KUBECTL
 COPY --from=bitnami/kubectl:1.14 /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/kubectl
-
