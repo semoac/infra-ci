@@ -19,6 +19,7 @@ COPY --from=quay.io/roboll/helmfile:helm3-v0.98.2 /usr/local/bin/helmfile /usr/l
 RUN helm plugin install https://github.com/databus23/helm-diff --version master
 RUN helm plugin install https://github.com/futuresimple/helm-secrets
 RUN helm plugin install https://github.com/hypnoglow/helm-s3.git
+RUN helm plugin install https://github.com/aslafy-z/helm-git.git
 
 ## KUBECTL
 COPY --from=bitnami/kubectl:1.14 /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/kubectl
